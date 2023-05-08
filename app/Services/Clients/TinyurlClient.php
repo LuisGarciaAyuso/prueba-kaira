@@ -20,7 +20,7 @@ class TinyurlClient
     protected $parser;
 
     /**
-     * @param Client $client
+     * @param Client        $client
      * @param TinyurlParser $parser
      */
     public function __construct(Client $client, TinyurlParser $parser)
@@ -32,7 +32,7 @@ class TinyurlClient
     /**
      * @param string $method
      * @param string $uri
-     * @param array $body
+     * @param array  $body
      *
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException

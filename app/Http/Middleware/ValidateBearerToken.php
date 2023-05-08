@@ -7,6 +7,12 @@ use Illuminate\Validation\UnauthorizedException;
 
 class ValidateBearerToken
 {
+    /**
+     * @param Request $request
+     * @param         $next
+     *
+     * @return mixed
+     */
     public function handle(Request $request, $next)
     {
         if ($this->bearerTokenIsValid($request)) {

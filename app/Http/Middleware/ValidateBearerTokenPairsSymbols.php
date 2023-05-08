@@ -8,7 +8,7 @@ use Illuminate\Validation\UnauthorizedException;
 class ValidateBearerTokenPairsSymbols extends ValidateBearerTokenPairs
 {
     /**
-     * @const string[]
+     * @const array
      */
     protected const PAIRS = [
         '(' => ')',

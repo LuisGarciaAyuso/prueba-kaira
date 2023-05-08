@@ -7,7 +7,7 @@ use App\Models\Url;
 class UrlEloquentRepository implements UrlRepository
 {
     /**
-     * @param array $data
+     * @param $id
      *
      * @return Url
      */
@@ -37,6 +37,7 @@ class UrlEloquentRepository implements UrlRepository
     }
 
     /**
+     * @param       $id
      * @param array $data
      *
      * @return Url
@@ -47,12 +48,12 @@ class UrlEloquentRepository implements UrlRepository
     }
 
     /**
-     * @param array $data
+     * @param $id
      *
      * @return Url
      */
     public function delete($id)
     {
-        return Url::delete($id);
+        Url::destroy($id);
     }
 }
