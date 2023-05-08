@@ -12,6 +12,6 @@ class Url extends Model
     protected $fillable = [
         'url',
         'short_url',
-        'created_at'
+        'shortening_method'
     ];
 }

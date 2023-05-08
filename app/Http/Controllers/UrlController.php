@@ -43,8 +43,9 @@ class UrlController extends Controller
         $shortUrl = $this->shortUrlService->create($data);
         if ($shortUrl && array_key_exists('url', $shortUrl)) {
             $this->urlRepository->create([
-                'url'        => $url,
-                'short_url'  => $shortUrl['url']
+                'url'               => $url,
+                'short_url'         => $shortUrl['url'],
+                'shortening_method' => $this->shortUrlService::NAME ?? null
             ]);
         }
 

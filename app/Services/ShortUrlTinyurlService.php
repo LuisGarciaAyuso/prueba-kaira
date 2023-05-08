@@ -10,6 +10,10 @@ class ShortUrlTinyurlService implements ShortUrlService
     /**
      * @const string
      */
+    public const NAME = 'tinyurl';
+    /**
+     * @const string
+     */
     protected const CREATE_URI = 'create';
 
     /**

@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\Url;
+use App\Services\ShortUrlService;
 use Tests\TestCase;
 
 class ShortUrlTest extends TestCase
@@ -97,9 +98,12 @@ class ShortUrlTest extends TestCase
     {
         $response->assertStatus(200)->assertJsonStructure(['url']);
         $responseContent = json_decode($response->getContent());
+        $shortUrlService = $this->app->make(ShortUrlService::class);
+
         $this->assertDatabaseHas(Url::class, [
-            'url'       => self::VALID_URL,
-            'short_url' => $responseContent->url
+            'url'               => self::VALID_URL,
+            'short_url'         => $responseContent->url,
+            'shortening_method' => $shortUrlService::NAME ?? null
         ]);
     }
 }
